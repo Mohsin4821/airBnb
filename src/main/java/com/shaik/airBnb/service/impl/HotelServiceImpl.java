@@ -6,6 +6,7 @@ import com.shaik.airBnb.entity.Room;
 import com.shaik.airBnb.exceptions.ResourceNotFoundException;
 import com.shaik.airBnb.repository.HotelRepository;
 import com.shaik.airBnb.service.HotelService;
+import com.shaik.airBnb.service.InventoryService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -18,6 +19,7 @@ public class HotelServiceImpl implements HotelService {
 
     private final HotelRepository hotelRepository;
     private final ModelMapper modelMapper;
+    private final InventoryService inventoryService;
     @Override
     public HotelDto createNewHotel(HotelDto hotelDto) {
         log.info("Creating a new hotel with name: {}",hotelDto.getName());
